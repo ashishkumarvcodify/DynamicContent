@@ -5,6 +5,10 @@ def home(request):
     return render(request, 'home.html')
 
 def contactme(request):
+    print(request.method)
+    if request.method=="POST":
+
+        print(request.POST)
     return render(request, 'contactme.html')
 
 def readme(request):

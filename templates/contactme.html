@@ -4,22 +4,29 @@
 <div class="container-lg">
     <img src="https://i.ytimg.com/vi/hbYJLfs3hCs/maxresdefault.jpg" class="card-img-top" alt="...">
     <div class="container p-3">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Full Name</label>
-            <input type="Name" class="form-control" id="exampleFormControlInput1" placeholder="full name">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Phone</label>
-            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="9876543210">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">message</textarea>
-        </div>
+        <form method = "post">
+            {% csrf_token %}
+            <div class="mb-3" >
+                <label for="your_name" class="form-label">Full Name</label> 
+                <input id="exampleFormControlInput1" type="text" class="form-control" placeholder ="your_name" name="name">
+            </div>
+            
+            <div class="mb-3" >
+                <label for="phone" class="form-label">Phone</label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="9876543210" name="phone">
+            </div>
+            <div class="mb-3" >
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+            </div>
+            <div class="mb-3" >
+                <label for="message" class="form-label">Message</label>
+                <input class="form-control" id="exampleFormControlTextarea1" rows="3" name="message">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">submit</button>
+            </div>
+        </form>
     </div>
 </div>
 
